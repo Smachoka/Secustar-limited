@@ -1,0 +1,209 @@
+ 
+      /* Global styles */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+      *{
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        transition:
+          background-color 0.4s ease,
+          color 0.3s ease;
+      }
+      /* Default LIGHT MODE (white background for services section as requested) */
+      body {
+        background-color: #f8f9fa !important;
+        color: #1e1e1e !important;
+      }
+      /* Dark mode styles - applied when body has dark-mode class */
+      body.dark-mode {
+        background-color: #0b0b0b !important;
+        color: white !important;
+      }
+      body.dark-mode .bg-white {
+        background-color: #1a1a1a !important;
+      }
+      body.dark-mode .text-gray-800 {
+        color: #e0e0e0 !important;
+      }
+      body.dark-mode .text-gray-700 {
+        color: #d1d1d1 !important;
+      }
+      body.dark-mode .border-gray-200 {
+        border-color: #333 !important;
+      }
+      body.dark-mode .bg-gray-50 {
+        background-color: #222 !important;
+      }
+      body.dark-mode .text-gray-600 {
+        color: #aaa !important;
+      }
+
+      /* gold text / border utilities */
+      .text-gold {
+        color: #d4af37;
+      }
+      .border-gold {
+        border: 2px solid #d4af37;
+      }
+      .gold-glow {
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+        transition: box-shadow 0.3s ease;
+      }
+      .gold-glow:hover {
+        box-shadow: 0 0 50px rgba(212, 175, 55, 0.6);
+      }
+      .gold-btn {
+        background: transparent;
+        border: 1px solid #d4af37;
+        color: #1e1e1e;
+        transition: 0.2s;
+      }
+      .gold-btn:hover {
+        background: #d4af37;
+        color: black;
+        box-shadow: 0 0 20px #d4af37;
+      }
+      body.dark-mode .gold-btn {
+        color: white;
+      }
+      body.dark-mode .gold-btn:hover {
+        color: black;
+      }
+      /* mobile menu */
+      .mobile-nav {
+        transition:
+          max-height 0.4s ease-in-out,
+          opacity 0.2s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      .mobile-nav.open {
+        max-height: 400px;
+        opacity: 1;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* gold glow orbs - only visible in dark mode */
+      .glow-orb {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 175, 55, 0.15) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: 0;
+        display: none;
+      }
+      body.dark-mode .glow-orb {
+        display: block;
+      }
+      /* service card specific styles - now in one row */
+      .service-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        transition: all 0.3s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      body.dark-mode .service-card {
+        background: #1a1a1a;
+        border-color: #333;
+      }
+      .service-card:hover {
+        border-color: #d4af37;
+        box-shadow: 0 20px 30px -10px rgba(212, 175, 55, 0.2);
+        transform: translateY(-4px);
+      }
+      /* Custom checkmark style exactly as in image */
+      .check-gold {
+        color: #d4af37;
+        font-size: 1.25rem;
+        font-weight: bold;
+        display: inline-block;
+        width: 24px;
+        text-align: center;
+      }
+      /* Add to your style section */
+      body.dark-mode .bg-gray-100 {
+        background-color: #0a0a0a !important;
+      }
+
+      body.dark-mode .text-gray-500 {
+        color: #9ca3af !important;
+      }
+
+      body.dark-mode .border-gray-200 {
+        border-color: #374151 !important;
+      }
+      .social-icon {
+        cursor: pointer;
+        transition: color 0.3s;
+        font-size: 30px; /* adjust size */
+        color: #000; /* default color */
+      }
+
+      .social-icon:hover {
+        color: gold; /* gold on hover */
+      }
+     
+
+
+/* Hero Package Badges */
+.package-badge {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 5px solid #fcc50f;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(0, 0, 0, 0.8) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  transition: all 0.3s ease;
+}
+
+.package-badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+  border-width: 4px;
+}
+
+.package-speed {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #d4af37;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.package-price {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .package-badge {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .package-speed {
+    font-size: 0.8rem;
+  }
+  
+  .package-price {
+    font-size: 0.55rem;
+  }
+}

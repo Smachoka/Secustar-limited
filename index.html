@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secustar Limited – premium fiber internet</title>
+    <!-- Tailwind via CDN + Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+   
+
+  </head>
+  <body class="antialiased overflow-x-hidden transition-colors duration-300">
+    <!-- Start with light mode (default) - services section will have white background -->
+    <script>
+      (function () {
+        // Start with light mode (no dark class)
+        document.body.classList.remove("dark-mode");
+      })();
+    </script>
+
+    <!-- NAVBAR -->
+    <nav
+      class="sticky top-0 z-50 bg-white bg-opacity-95 backdrop-blur-sm border-b border-[#d4af37]/30 py-3 px-4 md:px-8 flex items-center justify-between transition-colors"
+    >
+      <div class="text-2xl font-bold tracking-wide">
+        <span class="text-[#d4af37]">Secustar</span>
+        <span class="text-gray-800">Limited</span>
+      </div>
+
+      <!-- desktop menu -->
+      <ul class="hidden md:flex space-x-8 font-medium text-gray-700">
+        <li>
+          <a href="#home" class="hover:text-[#d4af37] transition">Home</a>
+        </li>
+        <li>
+          <a href="#services" class="hover:text-[#d4af37] transition"
+            >Our Services</a
+          >
+        </li>
+        <li>
+          <a href="#why-us" class="hover:text-[#d4af37] transition">Why Us</a>
+        </li>
+        <li>
+          <a href="#industries" class="hover:text-[#d4af37] transition"
+            >Our Industries</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="hover:text-[#d4af37] transition"
+            >Contacts</a
+          >
+        </li>
+      </ul>
+
+      <div class="flex items-center gap-3">
+        <button
+          id="themeToggle"
+          class="w-9 h-9 rounded-full border border-[#d4af37] flex items-center justify-center text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition"
+        >
+          <span id="toggleIcon">☀️</span>
+        </button>
+        <button
+          id="menuToggle"
+          class="block md:hidden text-[#d4af37] text-3xl focus:outline-none"
+        >
+          ☰
+        </button>
+      </div>
+    </nav>
+
+    <!-- mobile menu -->
+    <div
+      id="mobileMenu"
+      class="mobile-nav md:hidden bg-white border-b border-[#d4af37]/40 px-6 text-lg flex flex-col space-y-4 py-0"
+    >
+      <a href="#home" class="hover:text-[#d4af37] transition py-2 text-gray-700"
+        >Home</a
+      >
+      <a
+        href="#services"
+        class="hover:text-[#d4af37] transition py-2 text-gray-700"
+        >Our Services</a
+      >
+      <a
+        href="#why-us"
+        class="hover:text-[#d4af37] transition py-2 text-gray-700"
+        >Why Us</a
+      >
+      <a
+        href="#industries"
+        class="hover:text-[#d4af37] transition py-2 text-gray-700"
+        >Our Industries</a
+      >
+      <a
+        href="#contact"
+        class="hover:text-[#d4af37] transition py-2 text-gray-700"
+        >Contacts</a
+      >
+    </div>
+
+    <main class="relative">
+      <div class="glow-orb top-20 left-[-50px]"></div>
+      <div class="glow-orb bottom-0 right-[-80px]"></div>
+
+      <!-- HERO SECTION - adapts to theme -->
+     
+      <section class="relative bg-black min-h-screen overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="paint-stroke stroke-teal absolute top-10 left-20"></div>
+        <div
+          class="paint-stroke stroke-teal absolute top-1/3 right-0 w-[400px] h-[400px] blur-[60px]"
+        ></div>
+        <div
+          class="paint-stroke stroke-orange absolute bottom-32 left-10"
+        ></div>
+
+        <div
+          class="relative max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 min-h-screen py-16 z-10"
+        >
+          <!-- Left column with image -->
+          <div class="md:w-1/2 flex justify-center items-center">
+            <img
+              src="/images/1-removebg-preview.png"
+              alt="fiber optic cables"
+              class="w-full max-w-lg object-contain"
+            />
+          </div>
+
+          <!-- Right column content -->
+          <div class="md:w-1/2 text-white flex flex-col justify-center">
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+              <span class="text-gold">Internet</span> Without Limits.
+            </h1>
+
+            <p class="text-gray-300 text-base leading-relaxed mb-6">
+              Experience seamless browsing, buffer-free 4K streaming, and
+              lag-free gaming with Secustar's ultra-fast fiber network. Built on
+              a resilient backbone with 24/7 proactive monitoring, we don't just
+              connect you to the web—we power your digital lifestyle.
+            </p>
+
+            <ul class="text-gray-200 text-sm mb-8 space-y-2">
+              <li class="flex gap-2 items-center">
+                <span class="text-[#d4af37] text-lg">✓</span>
+                <span>Speeds up to 100 Mbps for home users.</span>
+              </li>
+              <li class="flex gap-2 items-center">
+                <span class="text-[#d4af37] text-lg">✓</span>
+                <span>Dedicated Support that actually answers the phone.</span>
+              </li>
+              <li class="flex gap-2 items-center">
+                <span class="text-[#d4af37] text-lg">✓</span>
+                <span
+                  >99.9% Uptime guaranteed by our intelligent SDN
+                  technology.</span
+                >
+              </li>
+            </ul>
+
+            <!-- Package Badges -->
+<div class="mb-6">
+  <div class="flex flex-wrap items-center justify-start gap-4">
+    <div class="package-badge">
+      <div class="package-speed">10Mbps</div>
+      <div class="package-price">KES 2,499</div>
+    </div>
+    
+    <div class="package-badge">
+      <div class="package-speed">15Mbps</div>
+      <div class="package-price">KES 2,899</div>
+    </div>
+    
+    <div class="package-badge">
+      <div class="package-speed">30Mbps</div>
+      <div class="package-price">KES 3,799</div>
+    </div>
+    
+    <div class="package-badge">
+      <div class="package-speed">50Mbps</div>
+      <div class="package-price">KES 4,999</div>
+    </div>
+    
+    <div class="package-badge">
+      <div class="package-speed">100Mbps</div>
+      <div class="package-price">KES 7,999</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA Button -->
+<div>
+  <button
+    class="bg-transparent border-2 border-white px-8 py-3 rounded-md text-white font-semibold text-sm transition-all hover:scale-105 hover:shadow-[0_0_25px_#d4af37] hover:bg-[#d4af37] hover:text-black hover:border-[#d4af37]"
+  >
+    VIEW PACKAGES
+  </button>
+</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SERVICES SECTION - WITH WHITE BACKGROUND (DEFAULT) AND CARDS IN ONE ROW -->
+      <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+          <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+            Our <span class="text-[#d4af37]">Services</span>
+          </h2>
+          <p class="text-center text-gray-600 mb-12">
+            cutting‑edge connectivity for every need
+          </p>
+
+          <!-- Service Cards Grid - NOW IN ONE ROW (4 columns on desktop, wraps on mobile) -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Residential Fiber Card -->
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+              <h3 class="text-xl font-bold text-[#d4af37] mb-3">
+                Residential Fiber (FTTH)
+              </h3>
+              <p class="text-lg font-semibold text-gray-800 mb-4">
+                From 2799 KES
+                <span class="text-xs font-normal text-gray-500">/mo</span>
+              </p>
+
+              <ul class="space-y-2 mb-4 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">15 Mbps:</span> Ksh
+                    2,799/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">50 Mbps:</span> Ksh
+                    4,999/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">100 Mbps:</span> Ksh
+                    7,999/mo</span
+                  >
+                </li>
+              </ul>
+
+              <p class="text-gray-600 text-xs mb-4">
+                Unlimited usage (FUP applies), Free router
+              </p>
+
+              <button
+                class="gold-btn mt-auto self-start px-12 py-1.5 rounded-full text-xs font-semibold"
+              >
+                Contact Us
+              </button>
+            </div>
+
+            <!-- Business Internet Card -->
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+              <h3 class="text-xl font-bold text-[#d4af37] mb-3">
+                Business Internet (SME/FTTB)
+              </h3>
+              <p class="text-lg font-semibold text-gray-800 mb-4">
+                From 3,000 KES
+                <span class="text-xs font-normal text-gray-500">/mo</span>
+              </p>
+
+              <ul class="space-y-1.5 mb-4 text-sm">
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">20 Mbps:</span> Ksh
+                    3,000/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">30 Mbps:</span> Ksh
+                    4,000/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">40 Mbps:</span> Ksh
+                    4,500/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">50 Mbps:</span> Ksh
+                    6,550/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">100 Mbps:</span> Ksh
+                    13,100/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">200 Mbps:</span> Ksh
+                    26,200/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">400 Mbps:</span> Ksh
+                    52,400/mo</span
+                  >
+                </li>
+              </ul>
+
+              <p class="text-gray-600 text-xs mb-4">
+                24/7 support, unlimited usage
+              </p>
+
+              <button
+                class="gold-btn mt-auto self-start px-12 py-1.5 rounded-full text-xs font-semibold"
+              >
+                Contact Us
+              </button>
+            </div>
+
+            <!-- Pewa WiFi Card -->
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+              <h3 class="text-xl font-bold text-[#d4af37] mb-3">
+                Pewa WiFi (Community)
+              </h3>
+              <p class="text-lg font-semibold text-gray-800 mb-2">
+                50 KES
+                <span class="text-xs font-normal text-gray-500">/day</span>
+              </p>
+
+              <p class="text-gray-700 text-sm mb-3">
+                 <span class="check-gold">✔</span>
+                Public spaces like marketplaces & bus stations, unlimited 24hr
+                access.
+              </p>
+
+              <p class="text-gray-700 text-sm mb-2">
+                <span class="font-semibold">From:</span> Ksh 50
+              </p>
+
+              <p class="text-gray-600 text-xs mb-4">
+                Remote & high-traffic areas
+              </p>
+
+              <button
+                class="gold-btn mt-auto self-start px-12 py-1.5 rounded-full text-xs font-semibold"
+              >
+                Contact Us
+              </button>
+            </div>
+
+            <!-- Enterprise & Special Services Card -->
+            <div class="service-card rounded-2xl p-6 flex flex-col">
+              <h3 class="text-xl font-bold text-[#d4af37] mb-3">
+                Enterprise & Special
+              </h3>
+              <p class="text-lg font-semibold text-gray-800 mb-3">
+                From 3,000 KES
+                <span class="text-xs font-normal text-gray-500">/mo</span>
+              </p>
+
+              <ul class="space-y-2 mb-4 text-xs">
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">DIA:</span> Symmetrical,
+                    guaranteed uptime</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">Dark Fiber:</span> 1-100
+                    Gbps</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">Static IP:</span> +Ksh
+                    1,000/mo</span
+                  >
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="check-gold">✔</span>
+                  <span
+                    ><span class="font-semibold">IPTV:</span> Ksh 2,500/mo +
+                    setup</span
+                  >
+                </li>
+              </ul>
+
+              <button
+                class="gold-btn mt-auto self-start px-12 py-1.5 rounded-full text-xs font-semibold"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- PACKAGES SECTION -->
+      <section id="packages" class="py-20 bg-black text-center">
+        <div class="w-full">
+          <!-- USING GENERATED PNG IMAGE -->
+          <div class="flex justify-center">
+            <img
+              src="images/WhatsApp Image 2026-02-14 at 10.40.33 AM (2).jpeg"
+              alt="Fiber Packages"
+              class="w-full gold-glow"
+            />
+          </div>
+        </div>
+        <div class="w-full mt-16">
+          <!-- USING GENERATED PNG IMAGE -->
+          <div class="flex justify-center">
+            <img
+              src="images/WhatsApp Image 2026-02-14 at 10.40.34 AM.jpeg"
+              alt="Fiber Packages"
+              class="w-full gold-glow"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Us & Industries -->
+      <section
+        id="why-us"
+        class="max-w-7xl mx-auto px-4 py-10 border-t border-[#d4af37]/20"
+      >
+        <h2 class="text-3xl font-bold text-[#d4af37] text-center">
+          Why Secustar?
+        </h2>
+        <p class="text-center text-gray-600 dark-mode:text-gray-300 mt-4">
+          Premium infrastructure, 24/7 local support, and intelligent SDN
+          technology ensure you're always online.
+        </p>
+      </section>
+      <section
+        id="industries"
+        class="max-w-7xl mx-auto px-4 py-10 border-t border-[#d4af37]/20"
+      >
+        <h2 class="text-3xl font-bold text-[#d4af37] text-center">
+          Industries we empower
+        </h2>
+        <p class="text-center text-gray-600 dark-mode:text-gray-300 mt-4">
+          Education, finance, hospitality, government, and enterprise — tailored
+          fiber solutions.
+        </p>
+      </section>
+
+      <!-- FOOTER - FIXED FOR DARK MODE -->
+      <footer
+        id="contact"
+        class="bg-gray-100 dark-mode:bg-[#0a0a0a] border-t border-[#d4af37]/40 mt-12 py-10 transition-colors duration-300"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8"
+        >
+          <div>
+            <div class="text-3xl font-bold mb-4">
+              <span class="text-[#d4af37]">Secustar</span>
+              <span class="text-gray-800 dark-mode:text-white">Limited</span>
+            </div>
+            <p class="text-gray-600 dark-mode:text-gray-400 text-sm">
+              Digital technologies to make life easy. Premium fiber since 2018.
+            </p>
+          </div>
+          <div>
+            <h4 class="text-[#d4af37] font-semibold text-lg mb-3">
+              Quick links
+            </h4>
+            <ul class="space-y-2 text-gray-600 dark-mode:text-gray-300">
+              <li>
+                <a href="#home" class="hover:text-[#d4af37] transition">Home</a>
+              </li>
+              <li>
+                <a href="#services" class="hover:text-[#d4af37] transition"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#packages" class="hover:text-[#d4af37] transition"
+                  >Packages</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-[#d4af37] transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-[#d4af37] font-semibold text-lg mb-3">Contact</h4>
+            <p class="text-gray-600 dark-mode:text-gray-300">
+              +254 700 123 456
+            </p>
+            <p class="text-gray-600 dark-mode:text-gray-300">
+              hello@secustar.co.ke
+            </p>
+            <p class="text-gray-600 dark-mode:text-gray-300">Nairobi, KE</p>
+          </div>
+          <div>
+            <h4 class="text-[#d4af37] font-semibold text-lg mb-3">Social</h4>
+            <div class="flex space-x-4 text-2xl text-gray-300">
+              <i class="fa-brands fa-facebook-f social-icon"></i>
+              <i class="fa-brands fa-twitter social-icon"></i>
+
+              <!-- TikTok -->
+              <i class="fa-brands fa-tiktok social-icon"></i>
+
+              <!-- Instagram -->
+              <i class="fa-brands fa-instagram social-icon"></i>
+            </div>
+          </div>
+        </div>
+        <div
+          class="text-center text-sm text-gray-500 dark-mode:text-gray-400 mt-8 border-t border-[#d4af37]/10 pt-4"
+        >
+          © 2026 Secustar Limited. All rights reserved.
+        </div>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
