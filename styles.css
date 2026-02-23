@@ -2,17 +2,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 * {
   font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
+
+/* ===== PREVENT HORIZONTAL SCROLL ===== */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+* {
+  max-width: 100%;
+}
+
 body {
   transition:
     background-color 0.4s ease,
     color 0.3s ease;
 }
+
 /* Default LIGHT MODE */
 body {
   background-color: #f8f9fa !important;
   color: #1e1e1e !important;
 }
+
 /* Dark mode styles */
 body.dark-mode {
   background-color: #0b0b0b !important;
@@ -181,6 +196,8 @@ html {
   pointer-events: none;
   z-index: 0;
   display: none;
+  /* Prevent orbs from causing horizontal scroll */
+  overflow: hidden;
 }
 body.dark-mode .glow-orb {
   display: block;
@@ -353,4 +370,55 @@ body.dark-mode .social-icon:hover {
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+}
+
+/* Mobile responsive WhatsApp */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    font-size: 26px;
+  }
+}
+
+/* ===== DARK MODE FOOTER FIX ===== */
+body.dark-mode footer {
+  background-color: #0a0a0a !important;
+  border-color: rgba(253, 185, 49, 0.2) !important;
+}
+body.dark-mode footer p,
+body.dark-mode footer a,
+body.dark-mode footer li {
+  color: #9ca3af !important;
+}
+body.dark-mode footer .text-gray-800 {
+  color: #ffffff !important;
+}
+body.dark-mode footer .text-gray-600 {
+  color: #9ca3af !important;
+}
+body.dark-mode footer .text-gray-500 {
+  color: #6b7280 !important;
+}
+body.dark-mode footer .border-t {
+  border-color: rgba(253, 185, 49, 0.1) !important;
+}
+body.dark-mode footer span.text-gray-800 {
+  color: #e0e0e0 !important;
+}
+
+/* ===== SECTIONS OVERFLOW FIX ===== */
+section,
+footer,
+nav,
+main {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Fix hero section paint strokes causing overflow */
+.paint-stroke {
+  overflow: hidden;
 }
