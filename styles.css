@@ -8,12 +8,12 @@ body {
     background-color 0.4s ease,
     color 0.3s ease;
 }
-/* Default LIGHT MODE (white background for services section as requested) */
+/* Default LIGHT MODE */
 body {
   background-color: #f8f9fa !important;
   color: #1e1e1e !important;
 }
-/* Dark mode styles - applied when body has dark-mode class */
+/* Dark mode styles */
 body.dark-mode {
   background-color: #0b0b0b !important;
   color: white !important;
@@ -37,38 +37,120 @@ body.dark-mode .text-gray-600 {
   color: #aaa !important;
 }
 
-/* gold text / border utilities */
+/* ===== REALISTIC GOLD GRADIENT ===== */
+:root {
+  --gold-gradient:
+    radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+  --gold-gradient-border:
+    radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #fedb37 0%,
+      #fdb931 8%,
+      #9f7928 30%,
+      #8a6e2f 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      #ffffac 8%,
+      #d1b464 25%,
+      #5d4a1f 62.5%,
+      #5d4a1f 100%
+    );
+  --gold-glow-color: rgba(253, 185, 49, 0.6);
+}
+
+/* ===== GOLD TEXT ===== */
 .text-gold {
-  color: #d4af37;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
+
+/* ===== GOLD BORDER ===== */
 .border-gold {
-  border: 2px solid #d4af37;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#fff, #fff), var(--gold-gradient-border);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
 }
+body.dark-mode .border-gold {
+  background-image:
+    linear-gradient(#1a1a1a, #1a1a1a), var(--gold-gradient-border);
+}
+
+/* ===== GOLD GLOW ===== */
 .gold-glow {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 30px rgba(253, 185, 49, 0.3);
   transition: box-shadow 0.3s ease;
 }
 .gold-glow:hover {
-  box-shadow: 0 0 50px rgba(212, 175, 55, 0.6);
+  box-shadow: 0 0 50px rgba(252, 208, 14, 0.7);
 }
+
+/* ===== GOLD BUTTON (service cards) ===== */
 .gold-btn {
   background: transparent;
-  border: 1px solid #d4af37;
+  border: 1px solid transparent;
+  background-image: linear-gradient(#fff, #fff), var(--gold-gradient-border);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   color: #1e1e1e;
-  transition: 0.2s;
+  transition: 0.3s;
 }
 .gold-btn:hover {
-  background: #d4af37;
+  background: var(--gold-gradient);
+  background-clip: unset;
+  -webkit-text-fill-color: black;
   color: black;
-  box-shadow: 0 0 20px #d4af37;
+  box-shadow: 0 0 20px var(--gold-glow-color);
+  border-color: transparent;
 }
 body.dark-mode .gold-btn {
+  background-image:
+    linear-gradient(#0b0b0b, #0b0b0b), var(--gold-gradient-border);
   color: white;
 }
 body.dark-mode .gold-btn:hover {
+  background: var(--gold-gradient);
+  -webkit-text-fill-color: black;
   color: black;
 }
-/* mobile menu */
+
+/* ===== HERO CTA BUTTON ===== */
+.gold-btn-hero {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.gold-btn-hero:hover {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  box-shadow: 0 0 25px var(--gold-glow-color);
+}
+.gold-btn-hero:hover a {
+  color: black !important;
+  -webkit-text-fill-color: black;
+}
+
+/* ===== MOBILE MENU ===== */
 .mobile-nav {
   transition:
     max-height 0.4s ease-in-out,
@@ -84,7 +166,8 @@ body.dark-mode .gold-btn:hover {
 html {
   scroll-behavior: smooth;
 }
-/* gold glow orbs - only visible in dark mode */
+
+/* ===== GLOW ORBS ===== */
 .glow-orb {
   position: absolute;
   width: 300px;
@@ -92,7 +175,7 @@ html {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(212, 175, 55, 0.15) 0%,
+    rgba(253, 185, 49, 0.15) 0%,
     transparent 70%
   );
   pointer-events: none;
@@ -102,7 +185,8 @@ html {
 body.dark-mode .glow-orb {
   display: block;
 }
-/* service card specific styles - now in one row */
+
+/* ===== SERVICE CARDS ===== */
 .service-card {
   background: white;
   border: 1px solid #e5e7eb;
@@ -116,76 +200,98 @@ body.dark-mode .service-card {
   border-color: #333;
 }
 .service-card:hover {
-  border-color: #d4af37;
-  box-shadow: 0 20px 30px -10px rgba(212, 175, 55, 0.2);
+  border-color: transparent;
+  background-image: linear-gradient(white, white), var(--gold-gradient-border);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 20px 30px -10px rgba(253, 185, 49, 0.3);
   transform: translateY(-4px);
 }
-/* Custom checkmark style exactly as in image */
+body.dark-mode .service-card:hover {
+  background-image:
+    linear-gradient(#1a1a1a, #1a1a1a), var(--gold-gradient-border);
+}
+
+/* ===== GOLD CHECKMARK ===== */
 .check-gold {
-  color: #d4af37;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: 1.25rem;
   font-weight: bold;
   display: inline-block;
   width: 24px;
   text-align: center;
 }
-/* Add to your style section */
+
+/* ===== DARK MODE EXTRAS ===== */
 body.dark-mode .bg-gray-100 {
   background-color: #0a0a0a !important;
 }
-
 body.dark-mode .text-gray-500 {
   color: #9ca3af !important;
 }
-
 body.dark-mode .border-gray-200 {
   border-color: #374151 !important;
 }
+
+/* ===== SOCIAL ICONS ===== */
 .social-icon {
   cursor: pointer;
-  transition: color 0.3s;
-  font-size: 30px; /* adjust size */
-  color: #000; /* default color */
+  transition: all 0.3s;
+  font-size: 30px;
+  color: #000;
 }
-
 .social-icon:hover {
-  color: gold; /* gold on hover */
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+body.dark-mode .social-icon {
+  color: #d1d5db;
+}
+body.dark-mode .social-icon:hover {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Hero Package Badges */
+/* ===== PACKAGE BADGES ===== */
 .package-badge {
   position: relative;
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 5px solid #fcc50f;
-  background: linear-gradient(
-    135deg,
-    rgba(212, 175, 55, 0.1) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  border: 5px solid transparent;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+    var(--gold-gradient-border);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 20px rgba(253, 185, 49, 0.4);
   transition: all 0.3s ease;
 }
-
 .package-badge:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
-  border-width: 4px;
+  box-shadow: 0 0 35px rgba(254, 219, 55, 0.75);
 }
-
 .package-speed {
   font-size: 0.95rem;
   font-weight: 700;
-  color: #d4af37;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1;
   margin-bottom: 2px;
 }
-
 .package-price {
   font-size: 0.65rem;
   font-weight: 600;
@@ -193,31 +299,20 @@ body.dark-mode .border-gray-200 {
   line-height: 1;
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .package-badge {
     width: 70px;
     height: 70px;
   }
-
   .package-speed {
     font-size: 0.8rem;
   }
-
   .package-price {
     font-size: 0.55rem;
   }
 }
-/* Dark mode social icons */
-body.dark-mode .social-icon {
-  color: #d1d5db; /* gray-300 for dark mode default */
-}
 
-body.dark-mode .social-icon:hover {
-  color: #d4af37; /* gold on hover in dark mode */
-}
-
-/* ===== PACKAGES IMAGE - RESPONSIVE ===== */
+/* ===== PACKAGES IMAGE ===== */
 .packages-img {
   display: block;
   width: 100%;
@@ -226,16 +321,36 @@ body.dark-mode .social-icon:hover {
   mix-blend-mode: lighten;
   margin: -30px 0 -20px 0;
 }
-
 @media (max-width: 768px) {
   .packages-img {
     max-width: 100%;
     margin: -10px auto -10px auto;
-    /* center it on mobile since layout stacks */
   }
-
-  /* Also tighten the hero content padding on mobile */
   #home .flex-col {
     gap: 4px;
   }
+}
+
+/* ===== FLOATING WHATSAPP BUTTON ===== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  font-size: 32px;
+  color: white;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
 }
